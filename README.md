@@ -28,4 +28,4 @@ This application interacts with an external weather station class library to dis
    - Use reflection to inspect the `WeatherData` class.
 
 ## License
-This project is for educational purposes as part of PROG6212.
+This project is for educational purposes as part of PROG6212. There is no specific license.
