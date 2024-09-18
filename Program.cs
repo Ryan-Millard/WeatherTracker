@@ -1,4 +1,5 @@
 ﻿using System;
+using WeatherApi;
 
 namespace WeatherTracker
 {
@@ -7,6 +8,8 @@ namespace WeatherTracker
 		static void Main(string[] args)
 		{
 			Console.WriteLine("WeatherTracker");
+
+			var weatherData = new WeatherData();
 		}
 	}
 }
