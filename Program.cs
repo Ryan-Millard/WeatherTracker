@@ -81,6 +81,41 @@ namespace WeatherTracker
 					Console.WriteLine("Invalid choice, please try again.");
 					break;
 			}
-		}
+
+			// Lists all cities in weather library
+            private static void ListCitiesByProvince()
+            {
+                Console.WriteLine("Enter the province name:");
+                string provinceName = Console.ReadLine();
+                List<City> citiesInProvince = _weatherData.GetCities(provinceName);
+
+                foreach (var city in citiesInProvince)
+                {
+                    Console.WriteLine($"City: {city.Name}, Province: {city.Province}");
+                }
+            }
+
+            // Display weather information on the city searched by user
+
+            private static void DisplayWeatherForCity()
+            {
+                Console.WriteLine("Enter the city name to get the weather:");
+                string cityName = Console.ReadLine();
+                WeatherRecord weatherRecord = _weatherData.GetWeatherRecordForCity(cityName);
+
+                if (weatherRecord != null)
+                {
+                    Console.WriteLine($"Weather for {weatherRecord.Name}, {weatherRecord.Province}:");
+                    Console.WriteLine($"Temperature: {weatherRecord.Weather.Temperature}");
+                    Console.WriteLine($"Precipitation: {weatherRecord.Weather.Precipitation}");
+                    Console.WriteLine($"Humidity: {weatherRecord.Weather.Humidity}");
+                    Console.WriteLine($"Wind: {weatherRecord.Weather.Wind}");
+                }
+                else
+                {
+                    Console.WriteLine("Weather data not available for the specified city.");
+                }
+            }
+        }
 	}
 }
