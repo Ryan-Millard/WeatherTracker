@@ -24,7 +24,7 @@ This application interacts with an external weather station class library to dis
 Follow these steps to contribute:
 1. **Clone the repository:** On your local machine, clone the repository.
    ```bash
-   git clone https://github.com/your-username/WeatherTracker.git
+   git clone https://github.com/Ryan-Millard/WeatherTracker.git
    ```
 2. **Create a new branch:** Always create a new branch for your changes. Use a meaningful name for your branch, such as fix-bug, add-feature, or update-documentation.
    ```bash
@@ -48,7 +48,7 @@ Follow these steps to contribute:
 		```
 	- If it does already have your branch:
 		```bash
-      git push origin -u <feature-name>
+      git push origin <feature-name>
 		```
   
 6. **Submit a pull request (PR):** Go to the GitHub repository and create a pull request (PR) from your branch. Make sure to add a descriptive title and provide a summary of your changes in the PR description.
