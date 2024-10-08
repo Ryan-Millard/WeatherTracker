@@ -51,9 +51,9 @@ namespace WeatherTracker
 					break;
 
 					// List cities in a province
-					case "2":
-						ListCitiesByProvince();
-						break;
+				case "2":
+					ListCitiesByProvince();
+					break;
 
 					// Display weather information for a city
 				case "3":
@@ -63,15 +63,15 @@ namespace WeatherTracker
 					break;
 
 					// Display weather information for cities in a province
-					case "4":
+				case "4":
 					var provinceName = ConsoleUtils.GetUserInput("\nEnter the name of the province to get weather information:");
-						_weatherService.DisplayWeatherForCitiesInProvince(provinceName);
-						break;
+					_weatherService.DisplayWeatherForCitiesInProvince(provinceName);
+					break;
 
 					// Show properties and methods of WeatherData
-					// case "5":
-						// _weatherService.DisplayWeatherDataReflection();
-						// break;
+				case "5":
+					_weatherService.DisplayWeatherDataReflection();
+					break;
 
 				case "6":
 					Console.WriteLine("\nExiting...");
