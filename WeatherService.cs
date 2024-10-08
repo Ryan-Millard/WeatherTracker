@@ -14,6 +14,14 @@ namespace WeatherTracker.Services
 			_weatherData = new WeatherData();
 		}
 
+		public void DisplayWeatherForCitiesInProvince(string provinceName)
+		{
+			var citiesInProvince = _weatherData.GetCities(provinceName);
+
+			foreach(var city in citiesInProvince)
+				DisplayWeatherForCity(city.Name);
+		}
+
 		public void DisplayWeatherForCity(string cityName)
 		{
 			var weatherRecord = _weatherData.GetWeatherRecordForCity(cityName);
