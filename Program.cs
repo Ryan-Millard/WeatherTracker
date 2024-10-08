@@ -68,9 +68,9 @@ namespace WeatherTracker
 				//     break;
 
 				// Show properties and methods of WeatherData
-				// case "5":
-				//     _weatherService.DisplayWeatherDataReflection();
-				//     break;
+				case "5":
+				     _weatherService.DisplayWeatherDataReflection();
+				     break;
 
 				case "6":
 					Console.WriteLine("\nExiting...");
