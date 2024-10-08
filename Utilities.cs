@@ -8,7 +8,7 @@ namespace WeatherTracker.Utilities
 		public static string GetUserInput(string prompt)
 		{
 			Console.WriteLine(prompt);
-			return Console.ReadLine();
+			return Console.ReadLine() ?? "";
 		}
 
 		public static void MultiWriteLine<T>(IEnumerable<T> text)

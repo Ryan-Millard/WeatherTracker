@@ -18,7 +18,7 @@ namespace WeatherTracker
 			while(true)
 			{
 				DisplayMenu();
-				var choice = Console.ReadLine();
+				var choice = Console.ReadLine() ?? "";
 
 				// Handle menu options using a switch expression
 				HandleMenuChoice(choice);
@@ -41,7 +41,7 @@ namespace WeatherTracker
 		private static void HandleMenuChoice(string choice)
 		{
 			// Remove spaces at beginninng and end of choice
-			choice = choice?.Trim();
+			choice = choice?.Trim() ?? "";
 
 			switch (choice)
 			{
@@ -59,7 +59,7 @@ namespace WeatherTracker
 				case "3":
 					var cityName = ConsoleUtils.GetUserInput("\nEnter the name of the city to get weather information:");
 					cityName?.Trim();
-					_weatherService.DisplayWeatherForCity(cityName);
+					_weatherService.DisplayWeatherForCity(cityName ?? "");
 					break;
 
 					// Display weather information for cities in a province
@@ -88,7 +88,7 @@ namespace WeatherTracker
 		private static void ListCitiesByProvince()
 		{
 			Console.WriteLine("Enter the province name:");
-			string provinceName = Console.ReadLine();
+			string provinceName = Console.ReadLine() ?? "";
 			List<City> citiesInProvince = _weatherData.GetCities(provinceName);
 
 			foreach (var city in citiesInProvince)
@@ -102,8 +102,8 @@ namespace WeatherTracker
 		private static void DisplayWeatherForCity()
 		{
 			Console.WriteLine("Enter the city name to get the weather:");
-			string cityName = Console.ReadLine();
-			WeatherRecord weatherRecord = _weatherData.GetWeatherRecordForCity(cityName);
+			string cityName = Console.ReadLine() ?? "";
+			WeatherRecord? weatherRecord = _weatherData.GetWeatherRecordForCity(cityName);
 
 			if (weatherRecord != null)
 			{
